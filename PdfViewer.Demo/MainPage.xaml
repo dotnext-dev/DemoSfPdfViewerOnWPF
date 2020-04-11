@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:PdfViewer.Demo"
+             xmlns:sf="clr-namespace:Syncfusion.SfPdfViewer.XForms;assembly=Syncfusion.SfPdfViewer.XForms"
+             mc:Ignorable="d"
+             x:Class="PdfViewer.Demo.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Icon="Images/reload.png"
+            Text="Toggle PDF"
+            Command="{Binding TogglePdfCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel />
+    </ContentPage.BindingContext>
+
+    <sf:SfPdfViewer x:Name="pdfViewer" InputFileStream="{Binding PdfDocumentStream}" />
+    
+</ContentPage>
